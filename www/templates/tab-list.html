@@ -1,0 +1,15 @@
+<ion-view view-title="Tasks">
+  <ion-content>
+    <ion-list>
+      <ion-item class="item-remove-animate item-icon-right" ng-repeat="task in tasks" type="item-text-wrap" href="#/tab/chats/{{task.id}}">
+        <h2>{{task.name}}</h2>
+        <i class="icon ion-chevron-right icon-accessory" ng-if="task.status == 0"></i>
+        <i class="icon ion-android-checkmark-circle-right ion-android-checkmark-circle" ng-if="task.status == 1" style="color:green"></i>
+
+        <ion-option-button class="button-assertive" ng-click="remove(task.id)">
+          Delete
+        </ion-option-button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
